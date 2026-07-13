@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apple-health-explorer"
+version = "0.1.0"
+description = "Comprehensive analysis of Apple Health export data — steps, sleep, heart rate, HRV, activity, noise and cross-metric correlations"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    {name = "aroaxinping", email = "aroaxinping@gmail.com"},
+]
+keywords = ["apple-health", "data-science", "health-analytics", "quantified-self"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "lxml>=4.9",
+]
+
+[project.optional-dependencies]
+viz = ["matplotlib>=3.7"]
+all = ["apple-health-explorer[viz]"]
+
+[project.urls]
+Homepage = "https://github.com/aroaxinping/apple-health-explorer"
+Repository = "https://github.com/aroaxinping/apple-health-explorer"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
